@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+  .square{
+  width:20vw;
+  height:20vw;
+  background:black;
+  color:white;
+  font-size:15vw;
+  }
+  .bigRectangle{
+  width:60vw;
+  height:25vw;
+  background:blue;
+  position: relative;
+  }
+  .leftNumber{
+  position:absolute;
+  left:0px;
+  top:2.5vw;
+  }
+  .rightNumber{
+  position:absolute;
+  right:0px;
+  top:2.5vw;
+  }
+  .smallSquare{
+  width:4vw;
+  height:4vw;
+  background:black;
+  color:white;
+  font-size:3vw
+  }
+  .upLeft{
+  position:absolute;
+  Left:21vw;
+  top:2.5vw;
+  }
+  .upRight{
+  position:absolute;
+  Right:21vw;
+  top:2.5vw;
+  }
+  .bottomLeft{
+  position:absolute;
+  left:21vw;
+  bottom:2.5vw;
+  }
+   .bottomRight{
+  position:absolute;
+  Right:21vw;
+  bottom:2.5vw;
+  }
+ </style>
+
+  </head>
+  <body>
+  <div class="bigRectangle">
+        <div class="square leftNumber ">36</div>
+        <div class="square rightNumber ">9</div>
+        <div class="smallSquare upLeft"  onclick="myCalculator(9,36,'add')">+</div>
+        <div class="smallSquare upRight " onclick="myCalculator(9,36,'subtract')">-</div>
+        <div class="smallSquare bottomLeft " onclick="myCalculator(9,36,'divide')">/</div>
+        <div class="smallSquare bottomRight " onclick="myCalculator(9,36,'multiply')">*</div>
+  </div>
+  <script>
+    function myCalculator(numA,numB,operation){
+    var Ghost;
+    var symbol;
+    if(operation=="add") {
+        Ghost=numA+numB;
+        symbol="+";
+    }
+       if(operation=="subtract") {
+        Ghost=numA-numB;
+        symbol="-";
+    }
+       if(operation=="divide") {
+        Ghost=numA/numB;
+        symbol="/";
+    }
+       if(operation=="multiply") {
+        Ghost=numA*numB;
+        symbol="*";
+    }
+
+
+    alert(numA+symbol+numB+"="+Ghost);
+;
+    }
+    // myCalculator(1,4,"subtract");
+    // myCalculator(2,4,"add");
+    //myCalculator(20,4,"divide");
+    // myCalculator(7,7,"multiply");
+    </script>
+  </body>
+</html>
+>
