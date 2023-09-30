@@ -54,13 +54,35 @@
   Right:21vw;
   bottom:2.5vw;
   }
+  input{
+  height:15vw;
+  width:15vw;
+  font-size:5vw;
+  }
+  #answerBox{
+  position:absolute;
+  left:22vw;
+  top:10vh;
+  width:9vw;
+  height:9vw;
+  font-size:3vw;
+  background: white;
+  text-align:center;
+  padding:3vw;
+  }
  </style>
 
   </head>
   <body>
   <div class="bigRectangle">
-        <div class="square leftNumber ">36</div>
-        <div class="square rightNumber ">9</div>
+        <div class="square leftNumber ">
+         <input id="textBoxA" type="text"/>
+        </div>
+        <div class="square rightNumber">
+        <input id="textBoxB" type="text"/>
+        </div>
+        <div id="answerBox">
+        </div>
         <div class="smallSquare upLeft"  onclick="myCalculator(9,36,'add')">+</div>
         <div class="smallSquare upRight " onclick="myCalculator(9,36,'subtract')">-</div>
         <div class="smallSquare bottomLeft " onclick="myCalculator(9,36,'divide')">/</div>
@@ -68,8 +90,17 @@
   </div>
   <script>
     function myCalculator(numA,numB,operation){
+
+
     var Ghost;
     var symbol;
+    var textBoxA=document.getElementById("textBoxA")
+    numA=Number(textBoxA.value);
+    var textBoxB=document.getElementById("textBoxB")
+    numB=Number(textBoxB.value);
+    var answerBox=document.getElementById("answerBox")
+
+
     if(operation=="add") {
         Ghost=numA+numB;
         symbol="+";
@@ -87,9 +118,7 @@
         symbol="*";
     }
 
-
-    alert(numA+symbol+numB+"="+Ghost);
-;
+;   answerBox.innerHTML=Ghost
     }
     // myCalculator(1,4,"subtract");
     // myCalculator(2,4,"add");
